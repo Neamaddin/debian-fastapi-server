@@ -1,0 +1,17 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=www
+WorkingDirectory=fastapi_project_path/src
+EnvironmentFile=fastapi_project_path/systemd/.env
+ExecStart=fastapi_project_path/env/bin/gunicorn \
+	-w 3 -k uvicorn.workers.UvicornWorker main:app \
+	--bind unix:fastapi_project_path/gunicorn/gunicorn.sock \
+	--access-logfile fastapi_project_path/gunicorn/access.log \
+	--error-logfile fastapi_project_path/gunicorn/error.log
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
