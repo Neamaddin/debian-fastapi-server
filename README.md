@@ -18,7 +18,7 @@ sudo apt-get update
 sudo apt-get install -y git nginx
 ```
 ## Create user www (Situationally)
-if when creating server you specified a login other than `www` or you didn't have opportunity to configure a user, then you need to create a user `www`.
+if when creating server you specified a login other than `www` or you didn't have opportunity to configure a user, then you need to create a user `www`.\
 Create user `www`, add `www` to sudoers and login as `www`:
 ```sh
 sudo adduser www
@@ -26,7 +26,7 @@ sudo usermod -aG sudo www
 su - www
 ```
 ## Setup SSH for ssh-key authentication (Optional)
-Using ssh keys is more secure than using a password for authentication.
+Using ssh keys is more secure than using a password for authentication.\
 If you don't have ssh keys, you need to generate them with following command (**command must be executed locally**).
 ```sh
 ssh-keygen
@@ -60,7 +60,7 @@ sudo ln -s /home/www/.python/bin/python3.10 /bin/python
 > Note: After installation, Python source folders can be deleted, they are no longer needed.
 
 ## Pull Git project and run server
->  **To quickly start server without editing configurations, you need download this repository and place FastAPI project files in `src` folder, while application file must be called `main.py` and application must be called `app`!!!
+>  **To quickly start server without editing configurations, you need download this repository and place FastAPI project files in `src` folder, while application file must be called `main.py` and application must be called `app`!!!\
 You also need append all dependencies in `requirements.txt` file.**
 
 ```sh
@@ -75,7 +75,7 @@ $ ./install.sh
 Your domain: my-domain.com
 ```
 ## Hints
-> **Gunicorn** logs contains in `gunicorn/access.log` and `gunicorn/error.log`.
+> **Gunicorn** logs contains in `gunicorn/access.log` and `gunicorn/error.log`\
 > **Nginx** logs contains in `nginx/access.log` and `/nginx/error.log`
 
 For check status of **gunicorn** daemon, run:
