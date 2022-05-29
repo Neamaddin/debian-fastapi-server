@@ -1,6 +1,12 @@
 ### Content
 
-[TOC]
+- [Debian server set up for FastAPI](#debian-server-set-up-for-fastapi)
+- [Install needed packages](#install-needed-packages)
+- [Create user www (Situationally)](#create-user-www-situationally)
+- [Setup SSH for ssh-key authentication (Optional)](#setup-ssh-for-ssh-key-authentication-optional)
+- [Install Python3.10](#install-python310)
+- [Pull Git project and run server](#pull-git-project-and-run-server)
+- [Hints](#hints)
 
 # Debian server set up for FastAPI
 In this guide we will set up Debian server for FastAPI project. We will install all necessary packages, build Python3.10.4 (current version at time of repository creation) from sources, and run `install.sh` script to configure nginx and gunicorn daemon under systemd.
