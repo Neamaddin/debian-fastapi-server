@@ -4,12 +4,12 @@
 - [Install needed packages](#install-needed-packages)
 - [Create user www (Situationally)](#create-user-www-situationally)
 - [Setup SSH for ssh-key authentication (Optional)](#setup-ssh-for-ssh-key-authentication-optional)
-- [Install Python3.10](#install-python310)
+- [Install Python3.11](#install-python310)
 - [Pull Git project and run server](#pull-git-project-and-run-server)
 - [Hints](#hints)
 
 # Debian server set up for FastAPI
-In this guide we will set up Debian server for FastAPI project. We will install all necessary packages, build Python3.10.4 (current version at time of repository creation) from sources, and run `install.sh` script to configure nginx and gunicorn daemon under systemd.
+In this guide we will set up Debian server for FastAPI project. We will install all necessary packages, build Python3.11.3 (current version at time of repository creation) from sources, and run `install.sh` script to configure nginx and gunicorn daemon under systemd.
 
 ## Install needed packages
 Connect to Debian server and update repositories and install some initial needed packages:
@@ -44,18 +44,18 @@ Restart SSH server to update settings:
 ```sh
 sudo service ssh restart
 ```
-## Install Python3.10
-Build from source Python3.10, install with prefix to `~/.python` folder:
+## Install Python3.11
+Build from source Python3.11, install with prefix to `~/.python` folder:
 ```sh
 sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
-wget https://www.python.org/ftp/python/3.10.4/Python-3.10.4.tgz
-tar xvf Python-3.10.*
-cd Python-3.10.4
+wget https://www.python.org/ftp/python/3.11.3/Python-3.11.3.tgz
+tar xvf Python-3.11.*
+cd Python-3.11.3
 mkdir ~/.python
 ./configure --enable-optimizations --prefix=/home/www/.python
 make -j8
 sudo make altinstall
-sudo ln -s /home/www/.python/bin/python3.10 /bin/python
+sudo ln -s /home/www/.python/bin/python3.11 /bin/python3.11
 ```
 > Note: After installation, Python source folders can be deleted, they are no longer needed.
 
